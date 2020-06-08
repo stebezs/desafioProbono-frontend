@@ -5,8 +5,11 @@ import "react-router-modal/css/react-router-modal.css";
 
 import { isAuthenticated } from "./services/auth";
 
-import App from "./pages/App";
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
+import AddProcess from "./pages/AddProcess";
+import Profile from "./pages/Profile";
+import App from "./pages/App";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -27,6 +30,8 @@ const Routes = () => (
       <Switch>
         <Route exact path="/" component={SignIn} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/addProcess" component={AddProcess} />
         <PrivateRoute path="/app" component={App} />
         <Route path="*" component={() => <h1>Page not found</h1>} />
       </Switch>
